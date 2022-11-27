@@ -59,6 +59,7 @@ const ResultBilling = styled.div`
   box-shadow: inset 0 0 1rem;
   margin-top: 10px;
   display: grid;
+  grid-template-column: 1fr re;
 `;
 
 function App() {
