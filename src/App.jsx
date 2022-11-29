@@ -57,11 +57,11 @@ const ResultBilling = styled.div`
   min-width: 800px;
   height: 500px;
   min-height: 450px;
-  background-color: white;
-  box-shadow: inset 0 0 1rem;
+  background-color: rgba(255, 224, 140, 0.5);
   margin-top: 10px;
   display: grid;
   grid-template-column: 1fr;
+  border-radius: 0 0 20px 20px;
 `;
 
 function App() {
@@ -140,7 +140,7 @@ function App() {
 
           {location.trackingDetails.map((data, i) => {
             return (
-              <div key={i} className="test">
+              <div key={i}>
                 <span className="dataBox">
                   <span className="timeString">{data.timeString}</span>
                   <span className="where">{data.where}</span>

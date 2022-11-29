@@ -17,12 +17,13 @@
 .resultBox > p {
   display: flex;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .resultBox > p {
   justify-content: center;
   align-items: center;
-  border: 1px solid grey;
+  border: 0.5px solid darkgray;
   width: 100%;
   height: 100%;
 }
