@@ -53,13 +53,15 @@ const SubmitBtn = styled.button`
 `;
 
 const ResultBilling = styled.div`
-  width: 800px;
-  height: 400px;
+  width: 1000px;
+  min-width: 800px;
+  height: 500px;
+  min-height: 450px;
   background-color: white;
   box-shadow: inset 0 0 1rem;
   margin-top: 10px;
   display: grid;
-  grid-template-column: 1fr re;
+  grid-template-column: 1fr;
 `;
 
 function App() {
@@ -130,15 +132,19 @@ function App() {
       </MenuBox>
       {location.complete ? (
         <ResultBilling>
+          <div className="resultBox">
+            <p>배송시간</p>
+            <p>현재위치</p>
+            <p>배송현황</p>
+          </div>
+
           {location.trackingDetails.map((data, i) => {
             return (
-              <div key={i}>
+              <div key={i} className="test">
                 <span className="dataBox">
                   <span className="timeString">{data.timeString}</span>
                   <span className="where">{data.where}</span>
                   <span className="kind">{data.kind}</span>
-                  <span className="manName">{data.manName}</span>
-                  <span className="telno">{data.telno}</span>
                 </span>
               </div>
             );

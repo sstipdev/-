@@ -12,3 +12,29 @@
   align-items: center;
   flex-direction: column;
 }
+
+.resultBox,
+.resultBox > p {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.resultBox > p {
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  width: 100%;
+  height: 100%;
+}
+
+.dataBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dataBox > span {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
