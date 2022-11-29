@@ -133,13 +133,13 @@ function App() {
           {location.trackingDetails.map((data, i) => {
             return (
               <div key={i}>
-                <span>
-                  <span>{data.timeString}</span>
-                  <span>{data.where}</span>
-                  <span>{data.kind}</span>
+                <span className="dataBox">
+                  <span className="timeString">{data.timeString}</span>
+                  <span className="where">{data.where}</span>
+                  <span className="kind">{data.kind}</span>
+                  <span className="manName">{data.manName}</span>
+                  <span className="telno">{data.telno}</span>
                 </span>
-                <span>{data.manName}</span>
-                <span>{data.telno}</span>
               </div>
             );
           })}
