@@ -99,7 +99,6 @@ function App() {
           onInput={(e) => {
             const value = e.target.value;
             setChoice(value);
-            console.log(choice);
             return value;
           }}
         >
