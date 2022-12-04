@@ -3,6 +3,13 @@ import { useQuery } from "react-query";
 import styled from "styled-components";
 import "./App.css";
 
+const Colorbox = styled.div`
+  display: flex;
+  width: 550px;
+  justify-content: space-around;
+  margin-bottom: 5px;
+`;
+
 const MenuBox = styled.div`
   width: 550px;
   height: 500px;
@@ -69,6 +76,7 @@ function App() {
   const [location, setLocation] = useState({});
   const [billing, setBilling] = useState();
   const [choice, setChoice] = useState();
+  const [color, setColor] = useState("");
 
   const {
     isLoading,
@@ -92,7 +100,13 @@ function App() {
 
   return (
     <div className="App">
-      <MenuBox>
+      <Colorbox className="color">
+        <span onClick={() => setColor("antiquewhite")}>원본</span>
+        <span onClick={() => setColor("brown")}>브라운</span>
+        <span onClick={() => setColor("lightsalmon")}>라이트새먼</span>
+        <span onClick={() => setColor("gray")}>그레이</span>
+      </Colorbox>
+      <MenuBox style={{ backgroundColor: color }}>
         <MenuTitle>메인메뉴</MenuTitle>
         <SubTitle>조회할 택배사를 고른 후 운송장 번호를 기입하시오</SubTitle>
         <CompanyList
