@@ -67,7 +67,6 @@ const ResultBilling = styled.div`
   background-color: rgba(255, 224, 140, 0.5);
   margin-top: 10px;
   display: grid;
-  grid-template-column: 1fr;
   border-radius: 0 0 20px 20px;
 `;
 
