@@ -1,74 +1,7 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "react-query";
-import styled from "styled-components";
+import { Colorbox, MenuBox, MenuTitle, SubTitle, CompanyList, BillingInput, SubmitBtn, ResultBilling, FailedBilling } from "../styles/style.jsx";
 import "./App.css";
-
-const Colorbox = styled.div`
-  display: flex;
-  width: 550px;
-  justify-content: space-around;
-  margin-bottom: 5px;
-`;
-
-const MenuBox = styled.div`
-  width: 550px;
-  height: 500px;
-  max-width: 550px;
-  background-color: antiquewhite;
-  text-align: center;
-  border-radius: 15px;
-`;
-
-const MenuTitle = styled.div`
-  padding: 20px 0 10px 0;
-  color: black;
-  font-size: 25px;
-  font-weigth: bold;
-`;
-
-const SubTitle = styled.div`
-  color: black;
-  font-size: 17px;
-`;
-
-const CompanyList = styled.select`
-  width: 400px;
-  height: 45px;
-  margin-top: 50px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-`;
-
-const BillingInput = styled.input`
-  width: 400px;
-  height: 45px;
-  margin-top: 30px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-`;
-
-const SubmitBtn = styled.button`
-  width: 100px;
-  height: 35px;
-  margin: 30px auto;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  display: block;
-`;
-
-const ResultBilling = styled.div`
-  width: 1000px;
-  min-width: 800px;
-  height: 500px;
-  min-height: 450px;
-  background-color: rgba(255, 224, 140, 0.5);
-  margin-top: 10px;
-  display: grid;
-  border-radius: 0 0 20px 20px;
-`;
 
 function App() {
   const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -76,7 +9,6 @@ function App() {
   const [billing, setBilling] = useState();
   const [choice, setChoice] = useState();
   const [color, setColor] = useState("");
-
   const {
     isLoading,
     isError,
@@ -90,7 +22,7 @@ function App() {
   });
 
   useEffect(() => {
-    console.log(location);
+    console.log();
     /** location 처리 코드 */
   }, [location]);
 
@@ -116,11 +48,7 @@ function App() {
           }}
         >
           {Company?.Company?.map((name, i) => {
-            return (
-              <option key={i} value={name.Code} selected={choice.Code === name}>
-                {name.Name}
-              </option>
-            );
+            return <option key={i}>{name.Name}</option>;
           })}
         </CompanyList>
         <BillingInput
@@ -152,7 +80,7 @@ function App() {
 
           {location.trackingDetails.map((data, i) => {
             return (
-              <div key={i}>
+              <div key={i} className="dd">
                 <span className="dataBox">
                   <span className="timeString">{data.timeString}</span>
                   <span className="where">{data.where}</span>
@@ -162,6 +90,11 @@ function App() {
             );
           })}
         </ResultBilling>
+      ) : null}
+      {location.status === false ? (
+        <FailedBilling>
+          <span>테스트</span>
+        </FailedBilling>
       ) : null}
     </div>
   );
