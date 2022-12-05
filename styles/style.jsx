@@ -6,6 +6,9 @@ export const Colorbox = styled.div`
   min-width: 220px;
   justify-content: space-around;
   margin-bottom: 5px;
+  @media screen and (max-width: 760px) {
+    width: 420px;
+  }
 `;
 
 export const MenuBox = styled.div`
@@ -14,6 +17,11 @@ export const MenuBox = styled.div`
   background-color: antiquewhite;
   text-align: center;
   border-radius: 15px;
+  z-index: 99;
+  @media screen and (max-width: 760px) {
+    width: 420px;
+  }
+  overflow: hidden;
 `;
 
 export const MenuTitle = styled.div`
@@ -21,6 +29,7 @@ export const MenuTitle = styled.div`
   color: black;
   font-size: 25px;
   font-weigth: bold;
+  margin-top: 50px;
 `;
 
 export const SubTitle = styled.div`
@@ -35,6 +44,9 @@ export const CompanyList = styled.select`
   border: none;
   border-radius: 5px;
   text-align: center;
+  @media screen and (max-width: 760px) {
+    width: 320px;
+  }
 `;
 
 export const BillingInput = styled.input`
@@ -44,6 +56,9 @@ export const BillingInput = styled.input`
   border: none;
   border-radius: 5px;
   text-align: center;
+  @media screen and (max-width: 760px) {
+    width: 320px;
+  }
 `;
 
 export const SubmitBtn = styled.button`
@@ -69,5 +84,15 @@ export const ResultBilling = styled.div`
 
 export const FailedBilling = styled.div`
   width: 500px;
+  height: 100px;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  @media screen and (max-width: 760px) {
+    width: 450px;
+  }
 `;

@@ -93,7 +93,7 @@ function App() {
       ) : null}
       {location.status === false ? (
         <FailedBilling>
-          <span>테스트</span>
+          <span>입력한 운송장번호는 만료되었거나 없는 운송장 번호 입니다.</span>
         </FailedBilling>
       ) : null}
     </div>
