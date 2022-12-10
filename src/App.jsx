@@ -80,7 +80,7 @@ function App() {
 
           {location.trackingDetails.map((data, i) => {
             return (
-              <div key={i} className="dd">
+              <div key={i} className="testtest">
                 <span className="dataBox">
                   <span className="timeString">{data.timeString}</span>
                   <span className="where">{data.where}</span>

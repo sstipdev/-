@@ -72,14 +72,17 @@ export const SubmitBtn = styled.button`
 `;
 
 export const ResultBilling = styled.div`
-  width: 1000px;
-  min-width: 800px;
+  width: 850px;
   height: 500px;
   min-height: 450px;
   background-color: rgba(255, 224, 140, 0.5);
   margin-top: 10px;
   display: grid;
   border-radius: 0 0 20px 20px;
+  @media screen and (max-width: 1000px) {
+    width: 500px;
+    font-size: 15px;
+  }
 `;
 
 export const FailedBilling = styled.div`
